@@ -73,11 +73,11 @@
 		EFE5490A2C3EB5460033A6A9 /* Weather+MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				EFE5492E2C3EBED90033A6A9 /* Model */,
+				EFE549392C3EC1B50033A6A9 /* WeatherDetail */,
 				EFE549252C3EB7E80033A6A9 /* Base */,
-				EFE5490B2C3EB5460033A6A9 /* AppDelegate.swift */,
-				EFE5490D2C3EB5460033A6A9 /* SceneDelegate.swift */,
-				EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */,
+				EFE5493A2C3EC1C40033A6A9 /* Delegate */,
+				EFE5493B2C3EC35B0033A6A9 /* Manager */,
+				EFE5492E2C3EBED90033A6A9 /* Model */,
 				EFE549142C3EB5480033A6A9 /* Assets.xcassets */,
 				EFE549162C3EB5480033A6A9 /* LaunchScreen.storyboard */,
 				EFE549192C3EB5480033A6A9 /* Info.plist */,
@@ -103,6 +103,30 @@
 				EFE5492F2C3EBEE80033A6A9 /* CityList.json */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EFE549392C3EC1B50033A6A9 /* WeatherDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */,
+			);
+			path = WeatherDetail;
+			sourceTree = "<group>";
+		};
+		EFE5493A2C3EC1C40033A6A9 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				EFE5490B2C3EB5460033A6A9 /* AppDelegate.swift */,
+				EFE5490D2C3EB5460033A6A9 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		EFE5493B2C3EC35B0033A6A9 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
