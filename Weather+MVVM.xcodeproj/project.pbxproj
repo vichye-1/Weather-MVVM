@@ -14,6 +14,9 @@
 		EFE549182C3EB5480033A6A9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EFE549172C3EB5480033A6A9 /* Base */; };
 		EFE549222C3EB6040033A6A9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EFE549212C3EB6040033A6A9 /* .gitignore */; };
 		EFE549242C3EB6420033A6A9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549232C3EB6420033A6A9 /* APIKey.swift */; };
+		EFE549272C3EBAEA0033A6A9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549262C3EBAEA0033A6A9 /* BaseViewController.swift */; };
+		EFE549292C3EBB460033A6A9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549282C3EBB460033A6A9 /* BaseTableViewCell.swift */; };
+		EFE5492B2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5492A2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		EFE549192C3EB5480033A6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFE549212C3EB6040033A6A9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		EFE549232C3EB6420033A6A9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EFE549262C3EBAEA0033A6A9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EFE549282C3EBB460033A6A9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		EFE5492A2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 		EFE5490A2C3EB5460033A6A9 /* Weather+MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				EFE549252C3EB7E80033A6A9 /* Base */,
 				EFE5490B2C3EB5460033A6A9 /* AppDelegate.swift */,
 				EFE5490D2C3EB5460033A6A9 /* SceneDelegate.swift */,
 				EFE5490F2C3EB5460033A6A9 /* ViewController.swift */,
@@ -68,6 +75,16 @@
 				EFE549232C3EB6420033A6A9 /* APIKey.swift */,
 			);
 			path = "Weather+MVVM";
+			sourceTree = "<group>";
+		};
+		EFE549252C3EB7E80033A6A9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EFE549262C3EBAEA0033A6A9 /* BaseViewController.swift */,
+				EFE549282C3EBB460033A6A9 /* BaseTableViewCell.swift */,
+				EFE5492A2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE549272C3EBAEA0033A6A9 /* BaseViewController.swift in Sources */,
+				EFE5492B2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift in Sources */,
 				EFE549102C3EB5460033A6A9 /* ViewController.swift in Sources */,
 				EFE5490C2C3EB5460033A6A9 /* AppDelegate.swift in Sources */,
 				EFE549242C3EB6420033A6A9 /* APIKey.swift in Sources */,
+				EFE549292C3EBB460033A6A9 /* BaseTableViewCell.swift in Sources */,
 				EFE5490E2C3EB5460033A6A9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
