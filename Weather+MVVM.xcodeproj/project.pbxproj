@@ -23,6 +23,8 @@
 		EFE549382C3EC1840033A6A9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549372C3EC1840033A6A9 /* Observable.swift */; };
 		EFE5493D2C3EC4AF0033A6A9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5493C2C3EC4AF0033A6A9 /* NetworkManager.swift */; };
 		EFE5493F2C3EC66E0033A6A9 /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5493E2C3EC66E0033A6A9 /* WeatherDetail.swift */; };
+		EFE5494F2C400B560033A6A9 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5494E2C400B560033A6A9 /* UIView+.swift */; };
+		EFE549522C400B930033A6A9 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549512C400B930033A6A9 /* ReuseIdentifierProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		EFE549372C3EC1840033A6A9 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		EFE5493C2C3EC4AF0033A6A9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EFE5493E2C3EC66E0033A6A9 /* WeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
+		EFE5494E2C400B560033A6A9 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		EFE549512C400B930033A6A9 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		EFE5490A2C3EB5460033A6A9 /* Weather+MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				EFE549502C400B780033A6A9 /* Protocol */,
+				EFE5494D2C400B440033A6A9 /* Extension */,
 				EFE549392C3EC1B50033A6A9 /* WeatherDetail */,
 				EFE549252C3EB7E80033A6A9 /* Base */,
 				EFE5493A2C3EC1C40033A6A9 /* Delegate */,
@@ -133,6 +139,22 @@
 				EFE5493C2C3EC4AF0033A6A9 /* NetworkManager.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		EFE5494D2C400B440033A6A9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EFE5494E2C400B560033A6A9 /* UIView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EFE549502C400B780033A6A9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				EFE549512C400B930033A6A9 /* ReuseIdentifierProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,9 +242,11 @@
 				EFE549382C3EC1840033A6A9 /* Observable.swift in Sources */,
 				EFE549272C3EBAEA0033A6A9 /* BaseViewController.swift in Sources */,
 				EFE5492B2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift in Sources */,
+				EFE549522C400B930033A6A9 /* ReuseIdentifierProtocol.swift in Sources */,
 				EFE549102C3EB5460033A6A9 /* WeatherDetailViewController.swift in Sources */,
 				EFE5490C2C3EB5460033A6A9 /* AppDelegate.swift in Sources */,
 				EFE549242C3EB6420033A6A9 /* APIKey.swift in Sources */,
+				EFE5494F2C400B560033A6A9 /* UIView+.swift in Sources */,
 				EFE549292C3EBB460033A6A9 /* BaseTableViewCell.swift in Sources */,
 				EFE5490E2C3EB5460033A6A9 /* SceneDelegate.swift in Sources */,
 			);

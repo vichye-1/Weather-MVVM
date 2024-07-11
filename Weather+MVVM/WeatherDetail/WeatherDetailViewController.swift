@@ -30,6 +30,24 @@ class WeatherDetailViewController: BaseViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
-
+    
+    override func configureTableView() {
+        weatherDetailTableView.delegate = self
+        weatherDetailTableView.dataSource = self
+        weatherDetailTableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+    }
 }
 
+extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        return cell
+    }
+    
+    
+}
