@@ -7,3 +7,6 @@
 
 import UIKit
 
+class HourlyTableViewCell: BaseTableViewCell {
+    
+}
