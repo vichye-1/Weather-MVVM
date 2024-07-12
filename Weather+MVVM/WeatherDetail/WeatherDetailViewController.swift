@@ -9,6 +9,17 @@ import UIKit
 import SnapKit
 
 class WeatherDetailViewController: BaseViewController {
+    
+//    private var cityWeatherScrollView = {
+//        let view = UIScrollView()
+//        view.backgroundColor = .systemYellow
+//        view.maximumZoomScale = 4
+//        view.minimumZoomScale = 1
+//        view.showsVerticalScrollIndicator = false
+//        view.showsHorizontalScrollIndicator = false
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
 
     private let weatherDetailTableView = {
         let tableview = UITableView()
@@ -44,10 +55,11 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         return cell
     }
-    
-    
 }
+
+//extension WeatherDetailViewController: UIScrollViewDelegate {
+//    
+//}
