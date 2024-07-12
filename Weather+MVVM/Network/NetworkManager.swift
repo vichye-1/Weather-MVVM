@@ -12,14 +12,20 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() { }
     
-    func fetchCurrentWeatherAPI(api: , completionHandler: @escaping recommendHandler) {
+    typealias forecastCompletionHandler = (String, AFError?) -> Void
+    
+    func fetchForecastAPI(api: APIURL, completionHandler: @escaping forecastCompletionHandler) {
         print(#function)
-        AF.request(api.endpoint, method: api.method, parameters: api.parameter, encoding: URLEncoding(destination: .queryString), headers: api.header).validate(statusCode: 200..<500).responseDecodable(of: Recommendations.self) { response in
+        guard let url = URL(string: api.urlString) else {
+            print("url nil")
+            return
+        }
+        AF.request(url).validate(statusCode: 200..<500).responseString { response in
             switch response.result {
             case .success(let value):
-                completionHandler(value.results, nil)
+                print(value)
             case .failure(let error):
-                completionHandler(nil, error)
+                print(error)
             }
         }
     }

@@ -98,6 +98,7 @@
 				EFE549162C3EB5480033A6A9 /* LaunchScreen.storyboard */,
 				EFE549192C3EB5480033A6A9 /* Info.plist */,
 				EFE549372C3EC1840033A6A9 /* Observable.swift */,
+				EFE549232C3EB6420033A6A9 /* APIKey.swift */,
 			);
 			path = "Weather+MVVM";
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 		EFE5493B2C3EC35B0033A6A9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				EFE549232C3EB6420033A6A9 /* APIKey.swift */,
 				EFE5493C2C3EC4AF0033A6A9 /* NetworkManager.swift */,
 			);
 			path = Network;
