@@ -12,10 +12,9 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() { }
     
-    typealias forecastCompletionHandler = (String, AFError?) -> Void
-    typealias currentCompletionHandler = (String, AFError?) -> Void
+    typealias weatherCompletionHandler = (String, AFError?) -> Void
     
-    func fetchForecastAPI(api: APIURL, completionHandler: @escaping forecastCompletionHandler) {
+    func fetchForecastAPI(api: APIURL, completionHandler: @escaping weatherCompletionHandler) {
         print(#function)
         guard let url = URL(string: api.urlString) else {
             print("url nil")
@@ -32,7 +31,7 @@ class NetworkManager {
         }
     }
     
-    func fetchCurrentAPI(api: APIURL, completionHandler: @escaping currentCompletionHandler) {
+    func fetchCurrentAPI(api: APIURL, completionHandler: @escaping weatherCompletionHandler) {
         print(#function)
         guard let url = URL(string: api.urlString) else {
             print("current url nil")
