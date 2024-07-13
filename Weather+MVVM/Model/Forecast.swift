@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct WeatherResponse: Decodable {
+struct ForecastResponse: Decodable {
     let name: String
-    
 }
 
 struct DetailWeather: Decodable {
