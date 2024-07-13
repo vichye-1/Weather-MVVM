@@ -38,6 +38,7 @@ class WeatherDetailViewController: BaseViewController {
                 print("Success")
             }
         }
+        print("@@@@@@@@@@after forecast@@@@@@@@@@")
         
         let currentAPI = APIURL.forecast(latitude: 35.133331, longitude: 128.699997, key: APIKey.openWeatherKey)
         NetworkManager.shared.fetchCurrentAPI(api: currentAPI) { success, fail in
@@ -47,6 +48,17 @@ class WeatherDetailViewController: BaseViewController {
                 print("current success")
             }
         }
+        print("@@@@@@@@@@after current@@@@@@@@@@")
+        
+        let iconAPI = APIURL.icon(icon: "01d")
+        NetworkManager.shared.fetchIconAPI(api: iconAPI) { success, fail in
+            if let fail = fail {
+                print("icon Error")
+            } else {
+                print("icon success")
+            }
+        }
+        print("@@@@@@@@@@after icon@@@@@@@@@@")
     }
 
     override func configureHierarchy() {
