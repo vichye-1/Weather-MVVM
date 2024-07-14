@@ -105,7 +105,6 @@ class WeatherDetailViewController: BaseViewController {
         bottomButtonsView.mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
         bottomButtonsView.listButton.addTarget(self, action: #selector(listButtonTapped), for: .touchUpInside)
     }
-    
     @objc private func mapButtonTapped() {
         let cityMapVC = CityMapViewController()
         self.present(cityMapVC, animated: true)
