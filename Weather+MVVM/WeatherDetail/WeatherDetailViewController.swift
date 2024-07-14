@@ -33,8 +33,10 @@ class WeatherDetailViewController: BaseViewController {
         return view
     }()
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        bottomButtonActions()
         
         let latitude = 35.133331
         let longitude = 128.699997
@@ -72,6 +74,7 @@ class WeatherDetailViewController: BaseViewController {
         print("@@@@@@@@@@after icon@@@@@@@@@@")
     }
 
+    // MARK: - configure funcs
     override func configureHierarchy() {
         [weatherDetailTableView, bottomButtonsView].forEach {
             view.addSubview($0)
@@ -96,8 +99,20 @@ class WeatherDetailViewController: BaseViewController {
         weatherDetailTableView.dataSource = self
         weatherDetailTableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }
+    
+    // MARK: - private funcs
+    private func bottomButtonActions() {
+        bottomButtonsView.mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func mapButtonTapped() {
+        let cityMapVC = CityMapViewController()
+        self.navigationController?.pushViewController(cityMapVC, animated: true)
+    }
+    
 }
 
+// MARK: - UITableView
 extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
