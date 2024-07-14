@@ -29,6 +29,7 @@
 		EFE549572C416F000033A6A9 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549562C416F000033A6A9 /* DailyTableViewCell.swift */; };
 		EFE549592C4171BA0033A6A9 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549582C4171BA0033A6A9 /* APIURL.swift */; };
 		EFE5495C2C43F5370033A6A9 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5495B2C43F5370033A6A9 /* ForecastViewModel.swift */; };
+		EFE5495F2C440A7E0033A6A9 /* BottomButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5495E2C440A7E0033A6A9 /* BottomButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		EFE549562C416F000033A6A9 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		EFE549582C4171BA0033A6A9 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		EFE5495B2C43F5370033A6A9 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
+		EFE5495E2C440A7E0033A6A9 /* BottomButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,13 +91,14 @@
 		EFE5490A2C3EB5460033A6A9 /* Weather+MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				EFE549502C400B780033A6A9 /* Protocol */,
-				EFE5494D2C400B440033A6A9 /* Extension */,
 				EFE549392C3EC1B50033A6A9 /* WeatherDetail */,
-				EFE549252C3EB7E80033A6A9 /* Base */,
-				EFE5493A2C3EC1C40033A6A9 /* Delegate */,
+				EFE5495D2C440A610033A6A9 /* Custom */,
 				EFE5493B2C3EC35B0033A6A9 /* Network */,
 				EFE5492E2C3EBED90033A6A9 /* Model */,
+				EFE549502C400B780033A6A9 /* Protocol */,
+				EFE5494D2C400B440033A6A9 /* Extension */,
+				EFE549252C3EB7E80033A6A9 /* Base */,
+				EFE5493A2C3EC1C40033A6A9 /* Delegate */,
 				EFE549142C3EB5480033A6A9 /* Assets.xcassets */,
 				EFE549162C3EB5480033A6A9 /* LaunchScreen.storyboard */,
 				EFE549192C3EB5480033A6A9 /* Info.plist */,
@@ -128,9 +131,9 @@
 		EFE549392C3EC1B50033A6A9 /* WeatherDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */,
 				EFE5495A2C43F5220033A6A9 /* ViewModel */,
 				EFE549532C416ED80033A6A9 /* Cell */,
-				EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */,
 			);
 			path = WeatherDetail;
 			sourceTree = "<group>";
@@ -183,6 +186,14 @@
 				EFE5495B2C43F5370033A6A9 /* ForecastViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EFE5495D2C440A610033A6A9 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				EFE5495E2C440A7E0033A6A9 /* BottomButtonsView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE5495F2C440A7E0033A6A9 /* BottomButtonsView.swift in Sources */,
 				EFE5493D2C3EC4AF0033A6A9 /* NetworkManager.swift in Sources */,
 				EFE549572C416F000033A6A9 /* DailyTableViewCell.swift in Sources */,
 				EFE5493F2C3EC66E0033A6A9 /* Forecast.swift in Sources */,

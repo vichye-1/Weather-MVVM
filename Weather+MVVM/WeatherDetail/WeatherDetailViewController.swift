@@ -27,6 +27,12 @@ class WeatherDetailViewController: BaseViewController {
         return tableview
     }()
     
+    private let bottomButtonsView: BottomButtonsView = {
+        let view = BottomButtonsView()
+        view.backgroundColor = .darkGray
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,12 +73,19 @@ class WeatherDetailViewController: BaseViewController {
     }
 
     override func configureHierarchy() {
-        view.addSubview(weatherDetailTableView)
+        [weatherDetailTableView, bottomButtonsView].forEach {
+            view.addSubview($0)
+        }
     }
     
     override func configureLayout() {
         weatherDetailTableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(bottomButtonsView.snp.top)
+        }
+        bottomButtonsView.snp.makeConstraints { make in
+            make.horizontalEdges.bottom.equalTo(view)
+            make.height.equalTo(50)
         }
     }
     
