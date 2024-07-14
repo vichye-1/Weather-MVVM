@@ -32,6 +32,7 @@
 		EFE5495F2C440A7E0033A6A9 /* BottomButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5495E2C440A7E0033A6A9 /* BottomButtonsView.swift */; };
 		EFE549642C441B640033A6A9 /* SearchCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549632C441B640033A6A9 /* SearchCityViewController.swift */; };
 		EFE549662C441BA20033A6A9 /* CityMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549652C441BA20033A6A9 /* CityMapViewController.swift */; };
+		EFE549692C448CCB0033A6A9 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549682C448CCB0033A6A9 /* CityTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		EFE5495E2C440A7E0033A6A9 /* BottomButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonsView.swift; sourceTree = "<group>"; };
 		EFE549632C441B640033A6A9 /* SearchCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewController.swift; sourceTree = "<group>"; };
 		EFE549652C441BA20033A6A9 /* CityMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewController.swift; sourceTree = "<group>"; };
+		EFE549682C448CCB0033A6A9 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +97,9 @@
 		EFE5490A2C3EB5460033A6A9 /* Weather+MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				EFE549392C3EC1B50033A6A9 /* WeatherDetail */,
 				EFE549622C441B460033A6A9 /* SearchCity */,
 				EFE549602C441B110033A6A9 /* CityMap */,
-				EFE549392C3EC1B50033A6A9 /* WeatherDetail */,
 				EFE5495D2C440A610033A6A9 /* Custom */,
 				EFE5493B2C3EC35B0033A6A9 /* Network */,
 				EFE5492E2C3EBED90033A6A9 /* Model */,
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				EFE549632C441B640033A6A9 /* SearchCityViewController.swift */,
+				EFE549682C448CCB0033A6A9 /* CityTableViewCell.swift */,
 			);
 			path = SearchCity;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				EFE5495F2C440A7E0033A6A9 /* BottomButtonsView.swift in Sources */,
 				EFE5493D2C3EC4AF0033A6A9 /* NetworkManager.swift in Sources */,
+				EFE549692C448CCB0033A6A9 /* CityTableViewCell.swift in Sources */,
 				EFE549572C416F000033A6A9 /* DailyTableViewCell.swift in Sources */,
 				EFE549642C441B640033A6A9 /* SearchCityViewController.swift in Sources */,
 				EFE5493F2C3EC66E0033A6A9 /* Forecast.swift in Sources */,
