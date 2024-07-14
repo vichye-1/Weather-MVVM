@@ -11,6 +11,9 @@ final class SearchCityViewController: BaseViewController {
     
     let identifier = CityTableViewCell.identifier
     
+    private var cities: [CityInfo] = []
+    private var filteredCities: [CityInfo] = []
+    
     private let citySearchBar = {
         let citysearchBar = UISearchBar()
         citysearchBar.placeholder = "Search for a city"
@@ -27,6 +30,7 @@ final class SearchCityViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cityTableView.rowHeight = 60
+        loadCities()
     }
     
     // MARK: - configureUI
@@ -52,7 +56,11 @@ final class SearchCityViewController: BaseViewController {
     }
     
     // MARK: - custom funcs
-    
+    private func loadCities() {
+        cities = CityLoader.loadCities()
+        filteredCities = cities
+        cityTableView.reloadData()
+    }
 }
 
 extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {

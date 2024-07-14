@@ -1,13 +1,14 @@
-[{
-        "id": 1832008,
-        "name": "Tokusan-ri",
-        "state": "",
-        "country": "KR",
-        "coord": {
-            "lon": 128.699997,
-            "lat": 35.133331
-        }
-    },
+[
+    {
+    "id": 1832008,
+    "name": "Tokusan-ri",
+    "state": "",
+    "country": "KR",
+    "coord": {
+        "lon": 128.699997,
+        "lat": 35.133331
+    }
+},
     {
         "id": 1832015,
         "name": "Heunghae",
@@ -1768,4 +1769,4 @@
             "lat": 35.689499
         }
     }
-    ]
+]

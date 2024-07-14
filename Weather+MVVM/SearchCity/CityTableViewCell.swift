@@ -35,10 +35,12 @@ class CityTableViewCell: BaseTableViewCell {
         return label
     }()
     
+    // MARK: - override init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
+    // MARK: - override funcs
     override func configureHierarchy() {
         [hashtagLabel, cityLabel, countryLabel].forEach {
             contentView.addSubview($0)
@@ -59,5 +61,10 @@ class CityTableViewCell: BaseTableViewCell {
             make.top.equalTo(cityLabel.snp.bottom).offset(4)
             make.height.equalTo(20)
         }
+    }
+    
+    // MARK: - custom funcs
+    func configureLabels(city: City) {
+        
     }
 }

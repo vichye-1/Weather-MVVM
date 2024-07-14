@@ -33,6 +33,7 @@
 		EFE549642C441B640033A6A9 /* SearchCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549632C441B640033A6A9 /* SearchCityViewController.swift */; };
 		EFE549662C441BA20033A6A9 /* CityMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549652C441BA20033A6A9 /* CityMapViewController.swift */; };
 		EFE549692C448CCB0033A6A9 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549682C448CCB0033A6A9 /* CityTableViewCell.swift */; };
+		EFE5496B2C4497FC0033A6A9 /* LoadCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5496A2C4497FC0033A6A9 /* LoadCity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		EFE549632C441B640033A6A9 /* SearchCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewController.swift; sourceTree = "<group>"; };
 		EFE549652C441BA20033A6A9 /* CityMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewController.swift; sourceTree = "<group>"; };
 		EFE549682C448CCB0033A6A9 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		EFE5496A2C4497FC0033A6A9 /* LoadCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				EFE5492F2C3EBEE80033A6A9 /* CityList.json */,
 				EFE5493E2C3EC66E0033A6A9 /* Forecast.swift */,
 				EFE549582C4171BA0033A6A9 /* APIURL.swift */,
+				EFE5496A2C4497FC0033A6A9 /* LoadCity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				EFE5492B2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift in Sources */,
 				EFE549522C400B930033A6A9 /* ReuseIdentifierProtocol.swift in Sources */,
 				EFE549102C3EB5460033A6A9 /* WeatherDetailViewController.swift in Sources */,
+				EFE5496B2C4497FC0033A6A9 /* LoadCity.swift in Sources */,
 				EFE5490C2C3EB5460033A6A9 /* AppDelegate.swift in Sources */,
 				EFE549242C3EB6420033A6A9 /* APIKey.swift in Sources */,
 				EFE5494F2C400B560033A6A9 /* UIView+.swift in Sources */,
