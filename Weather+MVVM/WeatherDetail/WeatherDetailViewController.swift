@@ -79,13 +79,15 @@ class WeatherDetailViewController: BaseViewController {
     }
     
     override func configureLayout() {
+        let long = 79
+        let short = 49
         weatherDetailTableView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.bottom.equalTo(bottomButtonsView.snp.top)
         }
         bottomButtonsView.snp.makeConstraints { make in
             make.horizontalEdges.bottom.equalTo(view)
-            make.height.equalTo(50)
+            make.height.equalTo(view.safeAreaLayoutGuide.layoutFrame.size.height > 800 ? long : short)
         }
     }
     
