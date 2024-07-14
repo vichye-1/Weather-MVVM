@@ -22,6 +22,16 @@ class CityTableViewCell: BaseTableViewCell {
         label.textColor = .black
         label.text = "Seoul"
         label.font = .systemFont(ofSize: 16)
+        label.textAlignment = .left
+        return label
+    }()
+    
+    private let countryLabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = .systemFont(ofSize: 14)
+        label.text = "KR"
+        label.textAlignment = .left
         return label
     }()
     
@@ -30,7 +40,7 @@ class CityTableViewCell: BaseTableViewCell {
     }
     
     override func configureHierarchy() {
-        [hashtagLabel, cityLabel].forEach {
+        [hashtagLabel, cityLabel, countryLabel].forEach {
             contentView.addSubview($0)
         }
     }
@@ -38,11 +48,16 @@ class CityTableViewCell: BaseTableViewCell {
     override func configureLayout() {
         hashtagLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
-            make.centerY.equalToSuperview().multipliedBy(0.8)
+            make.centerY.equalToSuperview().multipliedBy(0.7)
         }
         cityLabel.snp.makeConstraints { make in
             make.leading.equalTo(hashtagLabel.snp.trailing).offset(8)
             make.top.equalTo(hashtagLabel.snp.top)
+        }
+        countryLabel.snp.makeConstraints { make in
+            make.leading.equalTo(cityLabel.snp.leading)
+            make.top.equalTo(cityLabel.snp.bottom).offset(4)
+            make.height.equalTo(20)
         }
     }
 }
