@@ -23,6 +23,12 @@ final class SearchCityViewController: BaseViewController {
         return tv
     }()
     
+    // MARK: - viewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cityTableView.rowHeight = 60
+    }
+    
     // MARK: - configureUI
     override func configureHierarchy() {
         [citySearchBar, cityTableView].forEach {
