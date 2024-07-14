@@ -30,14 +30,19 @@ class WeatherDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let forecastAPI = APIURL.forecast(latitude: 35.133331, longitude: 128.699997, key: APIKey.openWeatherKey)
-        NetworkManager.shared.fetchForecastAPI(api: forecastAPI) { success, fail in
-            if let fail = fail {
-                print("error!!!")
-            } else {
-                print("Success")
+        let latitude = 35.133331
+        let longitude = 128.699997
+        
+        NetworkManager.shared.fetchForecastAPI(latitude: latitude, longitude: longitude) { result in
+            switch result {
+            case .success(let value):
+                print("Forecast Success!!!!!!!")
+                print(value)
+            case .failure(let error):
+                print(error)
             }
         }
+        
         print("@@@@@@@@@@after forecast@@@@@@@@@@")
         
         let currentAPI = APIURL.forecast(latitude: 35.133331, longitude: 128.699997, key: APIKey.openWeatherKey)

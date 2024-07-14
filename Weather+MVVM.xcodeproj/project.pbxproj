@@ -28,6 +28,7 @@
 		EFE549552C416EED0033A6A9 /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549542C416EED0033A6A9 /* HourlyTableViewCell.swift */; };
 		EFE549572C416F000033A6A9 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549562C416F000033A6A9 /* DailyTableViewCell.swift */; };
 		EFE549592C4171BA0033A6A9 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549582C4171BA0033A6A9 /* APIURL.swift */; };
+		EFE5495C2C43F5370033A6A9 /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5495B2C43F5370033A6A9 /* ForecastViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		EFE549542C416EED0033A6A9 /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
 		EFE549562C416F000033A6A9 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		EFE549582C4171BA0033A6A9 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
+		EFE5495B2C43F5370033A6A9 /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		EFE549392C3EC1B50033A6A9 /* WeatherDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EFE5495A2C43F5220033A6A9 /* ViewModel */,
 				EFE549532C416ED80033A6A9 /* Cell */,
 				EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */,
 			);
@@ -172,6 +175,14 @@
 				EFE549562C416F000033A6A9 /* DailyTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EFE5495A2C43F5220033A6A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EFE5495B2C43F5370033A6A9 /* ForecastViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 				EFE5493F2C3EC66E0033A6A9 /* Forecast.swift in Sources */,
 				EFE549552C416EED0033A6A9 /* HourlyTableViewCell.swift in Sources */,
 				EFE549382C3EC1840033A6A9 /* Observable.swift in Sources */,
+				EFE5495C2C43F5370033A6A9 /* ForecastViewModel.swift in Sources */,
 				EFE549272C3EBAEA0033A6A9 /* BaseViewController.swift in Sources */,
 				EFE5492B2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift in Sources */,
 				EFE549522C400B930033A6A9 /* ReuseIdentifierProtocol.swift in Sources */,
