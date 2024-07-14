@@ -14,8 +14,14 @@ final class SearchCityViewController: BaseViewController {
         return citysearchBar
     }()
     
+    private let cityTableView = {
+        let tv = UITableView()
+        tv.backgroundColor = .brown
+        return tv
+    }()
+    
     override func configureHierarchy() {
-        [citySearchBar].forEach {
+        [citySearchBar, cityTableView].forEach {
             view.addSubview($0)
         }
     }
@@ -23,6 +29,10 @@ final class SearchCityViewController: BaseViewController {
     override func configureLayout() {
         citySearchBar.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+        }
+        cityTableView.snp.makeConstraints { make in
+            make.top.equalTo(citySearchBar.snp.bottom)
+            make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
