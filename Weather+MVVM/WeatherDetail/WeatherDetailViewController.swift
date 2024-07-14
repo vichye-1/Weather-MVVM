@@ -103,13 +103,17 @@ class WeatherDetailViewController: BaseViewController {
     // MARK: - private funcs
     private func bottomButtonActions() {
         bottomButtonsView.mapButton.addTarget(self, action: #selector(mapButtonTapped), for: .touchUpInside)
+        bottomButtonsView.listButton.addTarget(self, action: #selector(listButtonTapped), for: .touchUpInside)
     }
     
     @objc private func mapButtonTapped() {
         let cityMapVC = CityMapViewController()
-        self.navigationController?.pushViewController(cityMapVC, animated: true)
+        self.present(cityMapVC, animated: true)
     }
-    
+    @objc private func listButtonTapped() {
+        let searchCityVC = SearchCityViewController()
+        self.navigationController?.pushViewController(searchCityVC, animated: true)
+    }
 }
 
 // MARK: - UITableView
