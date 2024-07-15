@@ -30,10 +30,16 @@ class MainWeatherCell: BaseTableViewCell {
         label.textAlignment = .center
         return label
     }()
-    
+    private let highlowLabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 18)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
     
     override func configureHierarchy() {
-        [cityLabel, temperatureLabel, descriptionLabel].forEach { contentView.addSubview($0) }
+        [cityLabel, temperatureLabel, descriptionLabel, highlowLabel].forEach { contentView.addSubview($0) }
     }
     
     override func configureLayout() {
@@ -49,11 +55,16 @@ class MainWeatherCell: BaseTableViewCell {
             make.top.equalTo(temperatureLabel.snp.bottom)
             make.horizontalEdges.equalToSuperview().inset(16)
         }
+        highlowLabel.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(4)
+            make.horizontalEdges.equalToSuperview().inset(16)
+        }
     }
     
-    func configureUI(cityName: String, temperature: String, description: String) {
+    func configureUI(cityName: String, temperature: String, description: String, highTemp: String, lowTemp: String) {
         cityLabel.text = cityName
         temperatureLabel.text = temperature
         descriptionLabel.text = description
+        highlowLabel.text = "최고 : \(highTemp) | 최저 : \(lowTemp)"
     }
 }
