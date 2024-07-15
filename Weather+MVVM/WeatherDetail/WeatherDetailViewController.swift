@@ -10,6 +10,8 @@ import SnapKit
 
 class WeatherDetailViewController: BaseViewController {
     
+    private let viewModel = ForecastViewModel()
+    
     private let mainWeatherIdentifier = MainWeatherCell.identifier
     private let hourlyIdentifier = HourlyTableViewCell.identifier
     private let dailyIdentifier = DailyTableViewCell.identifier
@@ -30,41 +32,37 @@ class WeatherDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bottomButtonActions()
-        
-        let latitude = 35.133331
-        let longitude = 128.699997
-        
-        NetworkManager.shared.fetchForecastAPI(latitude: latitude, longitude: longitude) { result in
-            switch result {
-            case .success(let value):
-                print("Forecast Success!!!!!!!")
-                print(value)
-            case .failure(let error):
-                print(error)
+        bindForecast()
+//        let currentAPI = APIURL.forecast(latitude: 35.133331, longitude: 128.699997, key: APIKey.openWeatherKey)
+//        NetworkManager.shared.fetchCurrentAPI(api: currentAPI) { success, fail in
+//            if fail != nil {
+//                print("current error!!!!!!!!")
+//            } else {
+//                print("current success")
+//            }
+//        }
+//        print("@@@@@@@@@@after current@@@@@@@@@@")
+//        
+//        let iconAPI = APIURL.icon(icon: "01d")
+//        NetworkManager.shared.fetchIconAPI(api: iconAPI) { success, fail in
+//            if fail != nil {
+//                print("icon Error")
+//            } else {
+//                print("icon success")
+//            }
+//        }
+//        print("@@@@@@@@@@after icon@@@@@@@@@@")
+    }
+    
+    private func bindForecast() {
+        viewModel.outputForecast.bind { forecast in
+            guard let forecast = forecast else { return }
+            if let mainCell = self.weatherTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? MainWeatherCell
+                , let currentWeather = forecast.list.first {
+                mainCell.configureUI(cityName: forecast.city.name, temperature: "\(Int(currentWeather.main.temp))°", description: currentWeather.weather.first?.description ?? "", highTemp: "\(Int(currentWeather.main.temp_max))°", lowTemp: "\(Int(currentWeather.main.temp_min))°")
             }
+            self.weatherTableView.reloadData()
         }
-        
-        print("@@@@@@@@@@after forecast@@@@@@@@@@")
-        
-        let currentAPI = APIURL.forecast(latitude: 35.133331, longitude: 128.699997, key: APIKey.openWeatherKey)
-        NetworkManager.shared.fetchCurrentAPI(api: currentAPI) { success, fail in
-            if fail != nil {
-                print("current error!!!!!!!!")
-            } else {
-                print("current success")
-            }
-        }
-        print("@@@@@@@@@@after current@@@@@@@@@@")
-        
-        let iconAPI = APIURL.icon(icon: "01d")
-        NetworkManager.shared.fetchIconAPI(api: iconAPI) { success, fail in
-            if fail != nil {
-                print("icon Error")
-            } else {
-                print("icon success")
-            }
-        }
-        print("@@@@@@@@@@after icon@@@@@@@@@@")
     }
 
     // MARK: - configure funcs

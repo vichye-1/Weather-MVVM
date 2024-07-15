@@ -11,21 +11,20 @@ import Alamofire
 final class ForecastViewModel {
     private let networkManager = NetworkManager.shared
     
-    var inputCityCellSelected: Observable<(latitude: Double, longitude: Double)?> = Observable(nil)
-    
+    var inputCityIdSelected: Observable<Int?> = Observable(nil)
     var outputForecast: Observable<ForecastResponse?> = Observable(nil)
     
     init() { transform() }
     
     private func transform() {
-        inputCityCellSelected.bind { location in
-            guard let location = location else { return }
-            self.fetchForecast(latitude: location.latitude, longitude: location.longitude)
+        inputCityIdSelected.bind { cityId in
+            guard let cityId = cityId else { return }
+            self.fetchForecast(cityId: cityId)
         }
     }
     
-    func fetchForecast(latitude: Double, longitude: Double) {
-        networkManager.fetchForecastAPI(latitude: latitude, longitude: longitude) { result in
+    func fetchForecast(cityId: Int) {
+        networkManager.fetchForecastAPI(cityId: cityId) { result in
             switch result {
             case .success(let value):
                 print(value)

@@ -16,9 +16,9 @@ class NetworkManager {
     typealias currentCompletionHandler = (String, AFError?) -> Void
     typealias iconCompletionHandler = (String, AFError?) -> Void
     
-    func fetchForecastAPI(latitude: Double, longitude: Double, completionHandler: @escaping forecastCompletionHandler) {
+    func fetchForecastAPI(cityId: Int, completionHandler: @escaping forecastCompletionHandler) {
         print(#function)
-        let api = APIURL.forecast(latitude: latitude, longitude: longitude, key: APIKey.openWeatherKey)
+        let api = APIURL.forecast(cityId: cityId, APIKey: APIKey.openWeatherKey)
         guard let url = URL(string: api.urlString) else {
             print("url nil")
             return
