@@ -79,7 +79,7 @@ class WeatherDetailViewController: BaseViewController {
         let short = 49
         
         weatherTableView.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.top.horizontalEdges.equalTo(view)
             make.bottom.equalTo(bottomButtonsView.snp.top)
         }
         bottomButtonsView.snp.makeConstraints { make in
