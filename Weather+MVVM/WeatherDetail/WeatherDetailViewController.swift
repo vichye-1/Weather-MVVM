@@ -9,6 +9,10 @@ import UIKit
 import SnapKit
 
 class WeatherDetailViewController: BaseViewController {
+    
+    private let mainWeatherIdentifier = MainWeatherCell.identifier
+    private let hourlyIdentifier = HourlyTableViewCell.identifier
+    private let dailyIdentifier = DailyTableViewCell.identifier
 
     private let weatherTableView = {
         let tableview = UITableView(frame: .zero, style: .insetGrouped)
@@ -44,7 +48,7 @@ class WeatherDetailViewController: BaseViewController {
         
         let currentAPI = APIURL.forecast(latitude: 35.133331, longitude: 128.699997, key: APIKey.openWeatherKey)
         NetworkManager.shared.fetchCurrentAPI(api: currentAPI) { success, fail in
-            if let fail = fail {
+            if fail != nil {
                 print("current error!!!!!!!!")
             } else {
                 print("current success")
@@ -54,7 +58,7 @@ class WeatherDetailViewController: BaseViewController {
         
         let iconAPI = APIURL.icon(icon: "01d")
         NetworkManager.shared.fetchIconAPI(api: iconAPI) { success, fail in
-            if let fail = fail {
+            if fail != nil {
                 print("icon Error")
             } else {
                 print("icon success")
@@ -87,7 +91,9 @@ class WeatherDetailViewController: BaseViewController {
     override func configureTableView() {
         weatherTableView.delegate = self
         weatherTableView.dataSource = self
-        weatherTableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        weatherTableView.register(MainWeatherCell.self, forCellReuseIdentifier: mainWeatherIdentifier)
+        weatherTableView.register(HourlyTableViewCell.self, forCellReuseIdentifier: hourlyIdentifier)
+        weatherTableView.register(DailyTableViewCell.self, forCellReuseIdentifier: dailyIdentifier)
     }
     
     // MARK: - private funcs
@@ -112,11 +118,48 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        switch section {
+        case 0, 1:
+            return 1
+        case 2:
+            return 5
+        default:
+            return 0
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: mainWeatherIdentifier, for: indexPath) as! MainWeatherCell
+            cell.configureUI(cityName: "Seoul")
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: hourlyIdentifier, for: indexPath) as! HourlyTableViewCell
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: dailyIdentifier, for: indexPath) as! DailyTableViewCell
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0: return 200
+        case 1: return 120
+        case 2: return 60
+        default: return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 1: return "3시간 간격의 일기예보"
+        case 2: return "5일 간의 일기예보"
+        default: return nil
+        }
     }
 }
