@@ -10,16 +10,16 @@ import SnapKit
 
 class WeatherDetailViewController: BaseViewController {
     
-//    private var cityWeatherScrollView = {
-//        let view = UIScrollView()
-//        view.backgroundColor = .systemYellow
+    private var cityWeatherScrollView = {
+        let view = UIScrollView()
+        view.backgroundColor = .systemYellow
 //        view.maximumZoomScale = 4
 //        view.minimumZoomScale = 1
 //        view.showsVerticalScrollIndicator = false
 //        view.showsHorizontalScrollIndicator = false
 //        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
+        return view
+    }()
 
     private let weatherDetailTableView = {
         let tableview = UITableView()
@@ -76,7 +76,7 @@ class WeatherDetailViewController: BaseViewController {
 
     // MARK: - configure funcs
     override func configureHierarchy() {
-        [weatherDetailTableView, bottomButtonsView].forEach {
+        [cityWeatherScrollView, bottomButtonsView].forEach {
             view.addSubview($0)
         }
     }
@@ -84,21 +84,25 @@ class WeatherDetailViewController: BaseViewController {
     override func configureLayout() {
         let long = 79
         let short = 49
-        weatherDetailTableView.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+        cityWeatherScrollView.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(view)
             make.bottom.equalTo(bottomButtonsView.snp.top)
         }
+//        weatherDetailTableView.snp.makeConstraints { make in
+//            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+//            make.bottom.equalTo(bottomButtonsView.snp.top)
+//        }
         bottomButtonsView.snp.makeConstraints { make in
             make.horizontalEdges.bottom.equalTo(view)
             make.height.equalTo(view.safeAreaLayoutGuide.layoutFrame.size.height > 800 ? long : short)
         }
     }
     
-    override func configureTableView() {
-        weatherDetailTableView.delegate = self
-        weatherDetailTableView.dataSource = self
-        weatherDetailTableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-    }
+//    override func configureTableView() {
+//        weatherDetailTableView.delegate = self
+//        weatherDetailTableView.dataSource = self
+//        weatherDetailTableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+//    }
     
     // MARK: - private funcs
     private func bottomButtonActions() {
@@ -116,16 +120,16 @@ class WeatherDetailViewController: BaseViewController {
 }
 
 // MARK: - UITableView
-extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        return cell
-    }
-}
+//extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 3
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+//        return cell
+//    }
+//}
 
 //extension WeatherDetailViewController: UIScrollViewDelegate {
 //    
