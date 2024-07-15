@@ -65,11 +65,13 @@ final class SearchCityViewController: BaseViewController {
 
 extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return filteredCities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CityTableViewCell
+        let city = filteredCities[indexPath.row]
+        cell.configureLabels(city: city)
         return cell
     }
 }

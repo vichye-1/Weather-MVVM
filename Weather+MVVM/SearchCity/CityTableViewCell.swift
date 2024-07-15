@@ -13,7 +13,6 @@ class CityTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = .boldSystemFont(ofSize: 17)
-        label.text = "#"
         return label
     }()
     
@@ -64,7 +63,9 @@ class CityTableViewCell: BaseTableViewCell {
     }
     
     // MARK: - custom funcs
-    func configureLabels(city: City) {
-        
+    func configureLabels(city: CityInfo) {
+        hashtagLabel.text = "#"
+        cityLabel.text = city.name
+        countryLabel.text = city.country
     }
 }
