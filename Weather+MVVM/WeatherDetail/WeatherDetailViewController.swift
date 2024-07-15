@@ -133,7 +133,7 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: mainWeatherIdentifier, for: indexPath) as! MainWeatherCell
-            cell.configureUI(cityName: "Seoul", temperature: "32°")
+            cell.configureUI(cityName: "Seoul", temperature: "32°", description: "Sunny")
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: hourlyIdentifier, for: indexPath) as! HourlyTableViewCell
