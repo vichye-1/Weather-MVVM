@@ -16,19 +16,31 @@ class MainWeatherCell: BaseTableViewCell {
         label.textAlignment = .center
         return label
     }()
+    private let temperatureLabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 64)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
     
     override func configureHierarchy() {
-        [cityLabel].forEach { contentView.addSubview($0) }
+        [cityLabel, temperatureLabel].forEach { contentView.addSubview($0) }
     }
     
     override func configureLayout() {
         cityLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(16)
+            make.centerX.equalToSuperview()
+        }
+        temperatureLabel.snp.makeConstraints { make in
+            make.top.equalTo(cityLabel.snp.bottom)
             make.centerX.equalToSuperview()
         }
     }
     
-    func configureUI(cityName: String) {
+    func configureUI(cityName: String, temperature: String) {
         cityLabel.text = cityName
+        temperatureLabel.text = temperature
     }
 }
