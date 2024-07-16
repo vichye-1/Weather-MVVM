@@ -35,6 +35,7 @@
 		EFE549692C448CCB0033A6A9 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549682C448CCB0033A6A9 /* CityTableViewCell.swift */; };
 		EFE5496B2C4497FC0033A6A9 /* LoadCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5496A2C4497FC0033A6A9 /* LoadCity.swift */; };
 		EFE549732C4554980033A6A9 /* MainWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549722C4554980033A6A9 /* MainWeatherCell.swift */; };
+		EFE549802C46B2B50033A6A9 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5497F2C46B2B50033A6A9 /* Double+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		EFE549682C448CCB0033A6A9 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		EFE5496A2C4497FC0033A6A9 /* LoadCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCity.swift; sourceTree = "<group>"; };
 		EFE549722C4554980033A6A9 /* MainWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherCell.swift; sourceTree = "<group>"; };
+		EFE5497F2C46B2B50033A6A9 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				EFE5494E2C400B560033A6A9 /* UIView+.swift */,
+				EFE5497F2C46B2B50033A6A9 /* Double+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				EFE549552C416EED0033A6A9 /* HourlyTableViewCell.swift in Sources */,
 				EFE549382C3EC1840033A6A9 /* Observable.swift in Sources */,
 				EFE5495C2C43F5370033A6A9 /* ForecastViewModel.swift in Sources */,
+				EFE549802C46B2B50033A6A9 /* Double+.swift in Sources */,
 				EFE549272C3EBAEA0033A6A9 /* BaseViewController.swift in Sources */,
 				EFE549662C441BA20033A6A9 /* CityMapViewController.swift in Sources */,
 				EFE549732C4554980033A6A9 /* MainWeatherCell.swift in Sources */,

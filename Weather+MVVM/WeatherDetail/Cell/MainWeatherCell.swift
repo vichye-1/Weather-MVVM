@@ -11,7 +11,7 @@ import SnapKit
 class MainWeatherCell: BaseTableViewCell {
     private let cityLabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 34)
+        label.font = .boldSystemFont(ofSize: 44)
         label.textColor = .black
         label.textAlignment = .center
         return label
@@ -44,7 +44,7 @@ class MainWeatherCell: BaseTableViewCell {
     
     override func configureLayout() {
         cityLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16)
+            make.top.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(16)
         }
         temperatureLabel.snp.makeConstraints { make in

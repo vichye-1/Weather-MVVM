@@ -36,7 +36,6 @@ final class ForecastViewModel {
             case .success(let forecast):
                 self.outputForecast.value = forecast
             case .failure(let error):
-                print("###########")
                 print(error)
             }
         }

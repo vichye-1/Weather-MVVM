@@ -18,7 +18,6 @@ class WeatherDetailViewController: BaseViewController {
 
     private let weatherTableView = {
         let tableview = UITableView(frame: .zero, style: .insetGrouped)
-        tableview.backgroundColor = .gray
         return tableview
     }()
     
@@ -127,9 +126,13 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: mainWeatherIdentifier, for: indexPath) as! MainWeatherCell
             if let forecast = viewModel.outputForecast.value, let currentWeather = forecast.list.first {
-                cell.configureUI(cityName: forecast.city.name, temperature: "\(Int(currentWeather.main.temp))°", description: currentWeather.weather.first?.description ?? "", highTemp: "\(Int(currentWeather.main.temp_max))°", lowTemp: "\(Int(currentWeather.main.temp_min))°")
+                let temp = currentWeather.main.temp.convertTemperature()
+                let maxTemp = currentWeather.main.temp_max.convertTemperature()
+                let minTemp = currentWeather.main.temp_min.convertTemperature()
+                
+                cell.configureUI(cityName: forecast.city.name, temperature: temp.temperatureFormat(), description: currentWeather.weather.first?.description ?? "", highTemp: maxTemp.temperatureFormat(), lowTemp: minTemp.temperatureFormat())
             }
-            
+            cell.backgroundColor = .clear
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: hourlyIdentifier, for: indexPath) as! HourlyTableViewCell
