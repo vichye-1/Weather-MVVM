@@ -127,7 +127,8 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: mainWeatherIdentifier, for: indexPath) as! MainWeatherCell
-            if let forecast = viewModel.outputForecast.value, let currentWeather = forecast.list.first {
+            if let forecast = viewModel.outputForecast.value,
+                let currentWeather = forecast.list.first {
                 let temp = currentWeather.main.temp.convertTemperature()
                 let maxTemp = currentWeather.main.temp_max.convertTemperature()
                 let minTemp = currentWeather.main.temp_min.convertTemperature()
