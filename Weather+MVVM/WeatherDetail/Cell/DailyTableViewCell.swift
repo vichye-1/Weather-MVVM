@@ -17,9 +17,16 @@ class DailyTableViewCell: BaseTableViewCell {
         return label
     }()
     
+    private let iconImageView = {
+        let view = UIView()
+        view.contentMode = .scaleAspectFit
+        view.backgroundColor = .orange
+        return view
+    }()
+    
     // MARK: - configure funcs
     override func configureHierarchy() {
-        [dayLabel].forEach { contentView.addSubview($0) }
+        [dayLabel, iconImageView].forEach { contentView.addSubview($0) }
     }
     
     override func configureLayout() {
@@ -28,6 +35,11 @@ class DailyTableViewCell: BaseTableViewCell {
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
             make.height.equalTo(30)
             make.width.equalTo(40)
+        }
+        iconImageView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(dayLabel.snp.trailing).offset(30)
+            make.width.height.equalTo(30)
         }
     }
 }
