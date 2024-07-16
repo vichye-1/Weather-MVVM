@@ -55,8 +55,10 @@ class WeatherDetailViewController: BaseViewController {
     }
     
     private func bindForecast() {
-        viewModel.outputForecast.bind { _ in
-            self.weatherTableView.reloadData()
+        viewModel.outputForecast.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.weatherTableView.reloadData()
+            }
         }
     }
 

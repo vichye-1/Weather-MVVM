@@ -19,13 +19,13 @@ final class ForecastViewModel {
     init() { transform() }
     
     private func transform() {
-        inputViewDidLoadTrigger.bind { _ in
-            self.fetchForecast(cityId: 1835847)
+        inputViewDidLoadTrigger.bind { [weak self] _ in
+            self?.fetchForecast(cityId: 1835847)
         }
         
-        inputCityIdSelected.bind { cityId in
+        inputCityIdSelected.bind { [weak self] cityId in
             guard let cityId = cityId else { return }
-            self.fetchForecast(cityId: cityId)
+            self?.fetchForecast(cityId: cityId)
         }
     }
     
