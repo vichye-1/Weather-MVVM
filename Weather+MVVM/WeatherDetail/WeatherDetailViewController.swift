@@ -33,6 +33,7 @@ class WeatherDetailViewController: BaseViewController {
         super.viewDidLoad()
         bottomButtonActions()
         bindForecast()
+        viewModel.inputViewDidLoadTrigger.value = ()
 //        let currentAPI = APIURL.forecast(latitude: 35.133331, longitude: 128.699997, key: APIKey.openWeatherKey)
 //        NetworkManager.shared.fetchCurrentAPI(api: currentAPI) { success, fail in
 //            if fail != nil {
@@ -55,12 +56,7 @@ class WeatherDetailViewController: BaseViewController {
     }
     
     private func bindForecast() {
-        viewModel.outputForecast.bind { forecast in
-            guard let forecast = forecast else { return }
-            if let mainCell = self.weatherTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? MainWeatherCell
-                , let currentWeather = forecast.list.first {
-                mainCell.configureUI(cityName: forecast.city.name, temperature: "\(Int(currentWeather.main.temp))°", description: currentWeather.weather.first?.description ?? "", highTemp: "\(Int(currentWeather.main.temp_max))°", lowTemp: "\(Int(currentWeather.main.temp_min))°")
-            }
+        viewModel.outputForecast.bind { _ in
             self.weatherTableView.reloadData()
         }
     }
@@ -123,7 +119,6 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
             return 5
         default:
             return 0
-            
         }
     }
     
@@ -131,7 +126,10 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: mainWeatherIdentifier, for: indexPath) as! MainWeatherCell
-            cell.configureUI(cityName: "Seoul", temperature: "32°", description: "Sunny", highTemp: "7.0°", lowTemp: "-4.2°")
+            if let forecast = viewModel.outputForecast.value, let currentWeather = forecast.list.first {
+                cell.configureUI(cityName: forecast.city.name, temperature: "\(Int(currentWeather.main.temp))°", description: currentWeather.weather.first?.description ?? "", highTemp: "\(Int(currentWeather.main.temp_max))°", lowTemp: "\(Int(currentWeather.main.temp_min))°")
+            }
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: hourlyIdentifier, for: indexPath) as! HourlyTableViewCell

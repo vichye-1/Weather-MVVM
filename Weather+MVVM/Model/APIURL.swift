@@ -15,7 +15,7 @@ enum APIURL {
     var urlString: String {
         switch self {
         case .forecast(let cityId, let APIKey):
-            return "api.openweathermap.org/data/2.5/forecast?id=\(cityId)&appid=\(APIKey)"
+            return "https://api.openweathermap.org/data/2.5/forecast?id=\(cityId)&appid=\(APIKey)"
         case .current(latitude: let latitude, longitude: let longitude, APIKey: let APIKey):
             return "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(APIKey)"
         case .icon(let icon):
