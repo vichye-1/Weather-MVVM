@@ -23,10 +23,18 @@ class DailyTableViewCell: BaseTableViewCell {
         view.backgroundColor = .orange
         return view
     }()
+    private let lowTemperatureLabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.textAlignment = .left
+        label.font = .systemFont(ofSize: 34)
+        label.backgroundColor = .cyan
+        return label
+    }()
     
     // MARK: - configure funcs
     override func configureHierarchy() {
-        [dayLabel, iconImageView].forEach { contentView.addSubview($0) }
+        [dayLabel, iconImageView, lowTemperatureLabel].forEach { contentView.addSubview($0) }
     }
     
     override func configureLayout() {
@@ -40,6 +48,11 @@ class DailyTableViewCell: BaseTableViewCell {
             make.centerY.equalToSuperview()
             make.leading.equalTo(dayLabel.snp.trailing).offset(30)
             make.width.height.equalTo(30)
+        }
+        lowTemperatureLabel.snp.makeConstraints { make in
+            make.centerY.centerX.equalToSuperview()
+            make.height.equalTo(30)
+            make.width.equalTo(100)
         }
     }
 }
