@@ -13,12 +13,11 @@ class DailyTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .left
-        label.backgroundColor = .black
+        label.font = .systemFont(ofSize: 20)
         return label
     }()
-    
     private let iconImageView = {
-        let view = UIView()
+        let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.backgroundColor = .orange
         return view
@@ -27,15 +26,14 @@ class DailyTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.textColor = .gray
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 34)
-        label.backgroundColor = .cyan
+        label.font = .systemFont(ofSize: 20)
         return label
     }()
     private let highTemperatureLabel = {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .right
-        label.backgroundColor = .blue
+        label.font = .systemFont(ofSize: 20)
         return label
     }()
     
@@ -67,5 +65,13 @@ class DailyTableViewCell: BaseTableViewCell {
             make.height.equalTo(30)
             make.width.equalTo(80)
         }
+    }
+    
+    // MARK: - other functions
+    func configureUI(day: String, icon: String, low: Double, high: Double) {
+        dayLabel.text = day
+        iconImageView.image = UIImage(named: icon)
+        lowTemperatureLabel.text = "최저 \(low)°"
+        highTemperatureLabel.text = "최고 \(high)°"
     }
 }

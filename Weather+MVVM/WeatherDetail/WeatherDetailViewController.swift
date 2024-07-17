@@ -142,6 +142,7 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: dailyIdentifier, for: indexPath) as! DailyTableViewCell
+            cell.configureUI(day: "오늘", icon: "star", low: -2, high: 9)
             return cell
         default:
             return UITableViewCell()
