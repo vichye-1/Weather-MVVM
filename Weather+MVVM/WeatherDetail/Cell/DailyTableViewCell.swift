@@ -31,10 +31,17 @@ class DailyTableViewCell: BaseTableViewCell {
         label.backgroundColor = .cyan
         return label
     }()
+    private let highTemperatureLabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .right
+        label.backgroundColor = .blue
+        return label
+    }()
     
     // MARK: - configure funcs
     override func configureHierarchy() {
-        [dayLabel, iconImageView, lowTemperatureLabel].forEach { contentView.addSubview($0) }
+        [dayLabel, iconImageView, lowTemperatureLabel, highTemperatureLabel].forEach { contentView.addSubview($0) }
     }
     
     override func configureLayout() {
@@ -42,17 +49,23 @@ class DailyTableViewCell: BaseTableViewCell {
             make.centerY.equalToSuperview()
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
             make.height.equalTo(30)
-            make.width.equalTo(40)
+            make.width.equalTo(50)
         }
         iconImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(dayLabel.snp.trailing).offset(30)
+            make.leading.equalTo(dayLabel.snp.trailing).offset(20)
             make.width.height.equalTo(30)
         }
         lowTemperatureLabel.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
             make.height.equalTo(30)
             make.width.equalTo(100)
+        }
+        highTemperatureLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(30)
+            make.width.equalTo(80)
         }
     }
 }
