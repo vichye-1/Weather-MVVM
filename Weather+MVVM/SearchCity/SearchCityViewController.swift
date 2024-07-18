@@ -8,9 +8,7 @@
 import UIKit
 
 final class SearchCityViewController: BaseViewController {
-    
-    let identifier = CityTableViewCell.identifier
-    
+        
     private var cities: [CityInfo] = []
     private var filteredCities: [CityInfo] = []
     
@@ -51,6 +49,7 @@ final class SearchCityViewController: BaseViewController {
         }
     }
     private func configureTableView() {
+        let identifier = CityTableViewCell.identifier
         cityTableView.delegate = self
         cityTableView.dataSource = self
         cityTableView.register(CityTableViewCell.self, forCellReuseIdentifier: identifier)
@@ -70,6 +69,7 @@ extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = CityTableViewCell.identifier
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CityTableViewCell
         let city = filteredCities[indexPath.row]
         cell.configureLabels(city: city)
