@@ -12,10 +12,6 @@ class WeatherDetailViewController: BaseViewController {
     
     private let viewModel = ForecastViewModel()
     
-    private let mainWeatherIdentifier = MainWeatherCell.identifier
-    private let hourlyIdentifier = HourlyTableViewCell.identifier
-    private let dailyIdentifier = DailyTableViewCell.identifier
-
     private let weatherTableView = {
         let tableview = UITableView(frame: .zero, style: .insetGrouped)
         return tableview
@@ -85,6 +81,10 @@ class WeatherDetailViewController: BaseViewController {
     }
     
     private func configureTableView() {
+        let mainWeatherIdentifier = MainWeatherCell.identifier
+        let hourlyIdentifier = HourlyTableViewCell.identifier
+        let dailyIdentifier = DailyTableViewCell.identifier
+
         weatherTableView.delegate = self
         weatherTableView.dataSource = self
         weatherTableView.register(MainWeatherCell.self, forCellReuseIdentifier: mainWeatherIdentifier)
@@ -127,6 +127,7 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
+            let mainWeatherIdentifier = MainWeatherCell.identifier
             let cell = tableView.dequeueReusableCell(withIdentifier: mainWeatherIdentifier, for: indexPath) as! MainWeatherCell
             if let forecast = viewModel.outputForecast.value,
                 let currentWeather = forecast.list.first {
@@ -139,9 +140,11 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
             cell.backgroundColor = .clear
             return cell
         case 1:
+            let hourlyIdentifier = HourlyTableViewCell.identifier
             let cell = tableView.dequeueReusableCell(withIdentifier: hourlyIdentifier, for: indexPath) as! HourlyTableViewCell
             return cell
         case 2:
+            let dailyIdentifier = DailyTableViewCell.identifier
             let cell = tableView.dequeueReusableCell(withIdentifier: dailyIdentifier, for: indexPath) as! DailyTableViewCell
             cell.configureUI(day: "오늘", icon: "star", low: -2, high: 9)
             return cell
