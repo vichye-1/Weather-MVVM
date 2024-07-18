@@ -31,6 +31,7 @@ final class SearchCityViewController: BaseViewController {
         super.viewDidLoad()
         cityTableView.rowHeight = 60
         loadCities()
+        configureTableView()
     }
     
     // MARK: - configureUI
@@ -49,7 +50,7 @@ final class SearchCityViewController: BaseViewController {
             make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    override func configureTableView() {
+    private func configureTableView() {
         cityTableView.delegate = self
         cityTableView.dataSource = self
         cityTableView.register(CityTableViewCell.self, forCellReuseIdentifier: identifier)

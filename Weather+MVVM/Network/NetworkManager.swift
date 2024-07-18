@@ -23,6 +23,7 @@ class NetworkManager {
             print("url nil")
             return
         }
+        //MARK: [Issue] - decoder를 .convertFromSnakeCase로 변환만 하고, 실제로 쓰지 않았다.
 //        let decoder = JSONDecoder()
 //        decoder.keyDecodingStrategy = .convertFromSnakeCase
         

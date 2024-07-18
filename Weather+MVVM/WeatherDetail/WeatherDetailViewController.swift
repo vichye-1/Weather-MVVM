@@ -30,6 +30,7 @@ class WeatherDetailViewController: BaseViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         bottomButtonActions()
         bindForecast()
         viewModel.inputViewDidLoadTrigger.value = ()
@@ -83,7 +84,7 @@ class WeatherDetailViewController: BaseViewController {
         }
     }
     
-    override func configureTableView() {
+    private func configureTableView() {
         weatherTableView.delegate = self
         weatherTableView.dataSource = self
         weatherTableView.register(MainWeatherCell.self, forCellReuseIdentifier: mainWeatherIdentifier)

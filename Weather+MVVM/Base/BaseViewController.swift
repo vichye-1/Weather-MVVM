@@ -15,12 +15,8 @@ class BaseViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureView()
-        configureTableView()
-        configureCollectionView()
     }
     func configureHierarchy() { }
     func configureLayout() { }
     func configureView() { }
-    func configureTableView() { }
-    func configureCollectionView() { }
 }
