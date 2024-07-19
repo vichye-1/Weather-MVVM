@@ -151,7 +151,7 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         switch indexPath.section {
         case 0: return 200
         case 1: return 120
-        case 2: return 60
+        case 2: return 50
         default: return 0
         }
     }

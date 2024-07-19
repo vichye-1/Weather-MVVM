@@ -27,6 +27,7 @@ class DailyTableViewCell: BaseTableViewCell {
         label.textColor = .gray
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 20)
+        label.backgroundColor = .blue
         return label
     }()
     private let highTemperatureLabel = {
@@ -34,6 +35,7 @@ class DailyTableViewCell: BaseTableViewCell {
         label.textColor = .black
         label.textAlignment = .right
         label.font = .systemFont(ofSize: 20)
+        label.backgroundColor = .systemYellow
         return label
     }()
     
@@ -45,28 +47,24 @@ class DailyTableViewCell: BaseTableViewCell {
     override func configureLayout() {
         dayLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(16)
-            make.height.equalTo(30)
-            make.width.equalTo(50)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(20)
+            make.width.equalTo(30)
         }
         iconImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(dayLabel.snp.trailing).offset(20)
-            make.width.height.equalTo(30)
+            make.leading.equalTo(dayLabel.snp.trailing).offset(8)
+            make.width.height.equalTo(40)
         }
         lowTemperatureLabel.snp.makeConstraints { make in
-            make.centerY.centerX.equalToSuperview()
-            make.height.equalTo(30)
-            make.width.equalTo(100)
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(iconImageView.snp.trailing).offset(8)
         }
         highTemperatureLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(30)
-            make.width.equalTo(80)
+            make.leading.equalTo(lowTemperatureLabel.snp.trailing).offset(8)
+            make.trailing.lessThanOrEqualTo(contentView).inset(16)
         }
     }
-    
     // MARK: - other functions
     func configureUI(day: String, icon: String, low: String, high: String) {
         dayLabel.text = day
