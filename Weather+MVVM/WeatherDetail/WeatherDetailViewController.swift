@@ -138,7 +138,9 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
             let cell = tableView.dequeueReusableCell(withIdentifier: dailyIdentifier, for: indexPath) as! DailyTableViewCell
             let dailyForecasts = viewModel.getDailyForecast()
             let forecast = dailyForecasts[indexPath.row]
-            cell.configureUI(day: forecast.day, icon: forecast.icon, low: forecast.lowTemp, high: forecast.highTemp)
+            let minTemp = forecast.lowTemp.convertTemperature()
+            let maxTemp = forecast.highTemp.convertTemperature()
+            cell.configureUI(day: forecast.day, icon: forecast.icon, low: minTemp.temperatureFormat(), high: maxTemp.temperatureFormat())
             return cell
         default:
             return UITableViewCell()

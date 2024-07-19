@@ -68,11 +68,11 @@ class DailyTableViewCell: BaseTableViewCell {
     }
     
     // MARK: - other functions
-    func configureUI(day: String, icon: String, low: Double, high: Double) {
+    func configureUI(day: String, icon: String, low: String, high: String) {
         dayLabel.text = day
         let iconUrl = APIURL.icon(icon: icon)
         iconImageView.kf.setImage(with: URL(string: iconUrl.urlString))
-        lowTemperatureLabel.text = "최저 \(low)°"
-        highTemperatureLabel.text = "최고 \(high)°"
+        lowTemperatureLabel.text = "최저 \(low)"
+        highTemperatureLabel.text = "최고 \(high)"
     }
 }
