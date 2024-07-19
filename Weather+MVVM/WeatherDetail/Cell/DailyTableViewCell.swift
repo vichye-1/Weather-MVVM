@@ -27,7 +27,6 @@ class DailyTableViewCell: BaseTableViewCell {
         label.textColor = .gray
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 20)
-        label.backgroundColor = .blue
         return label
     }()
     private let highTemperatureLabel = {
@@ -35,7 +34,6 @@ class DailyTableViewCell: BaseTableViewCell {
         label.textColor = .black
         label.textAlignment = .right
         label.font = .systemFont(ofSize: 20)
-        label.backgroundColor = .systemYellow
         return label
     }()
     
@@ -58,11 +56,13 @@ class DailyTableViewCell: BaseTableViewCell {
         lowTemperatureLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalTo(iconImageView.snp.trailing).offset(8)
+            make.width.equalTo(110)
         }
         highTemperatureLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalTo(lowTemperatureLabel.snp.trailing).offset(8)
             make.trailing.lessThanOrEqualTo(contentView).inset(16)
+            make.width.equalTo(110)
         }
     }
     // MARK: - other functions
