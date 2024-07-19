@@ -6,7 +6,13 @@
 //
 
 import Foundation
-import Alamofire
+
+struct DailyForecast {
+    let day: String
+    let icon: String
+    var lowTemp: Double
+    var highTemp: Double
+}
 
 final class ForecastViewModel {
     private let networkManager = NetworkManager.shared
@@ -39,5 +45,41 @@ final class ForecastViewModel {
                 print(error)
             }
         }
+    }
+    
+    func getDailyForecast() -> [DailyForecast] {
+        guard let forecast = outputForecast.value else { return [] }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        var dailyForecasts: [String: DailyForecast] = [:]
+        
+        for item in forecast.list {
+            guard let date = dateFormatter.date(from: item.dt_txt) else { continue }
+            
+            let dayFormatter = DateFormatter()
+            dayFormatter.dateFormat = "yyyyMMdd"
+            let dateString = dayFormatter.string(from: date)
+            
+            if dailyForecasts[dateString] == nil {
+                let dayOfWeek = getDayOfWeek(date: date)
+                dailyForecasts[dateString] = DailyForecast(day: dayOfWeek, icon: item.weather.first?.icon ?? "", lowTemp: item.main.temp_min, highTemp: item.main.temp_max)
+            } else {
+                if var forecast = dailyForecasts[dateString] {
+                    forecast.lowTemp = min(forecast.lowTemp, item.main.temp_min)
+                    forecast.highTemp = max(forecast.highTemp, item.main.temp_max)
+                    dailyForecasts[dateString] = forecast
+                }
+            }
+        }
+        return Array(dailyForecasts.values.prefix(5))
+    }
+    
+    private func getDayOfWeek(date: Date) -> String {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "E"
+        dateformatter.locale = Locale(identifier: "ko_KR")
+        return dateformatter.string(from: date)
     }
 }

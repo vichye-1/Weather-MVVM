@@ -118,7 +118,7 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         case 0, 1:
             return 1
         case 2:
-            return 5
+            return viewModel.getDailyForecast().count
         default:
             return 0
         }
@@ -146,7 +146,9 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         case 2:
             let dailyIdentifier = DailyTableViewCell.identifier
             let cell = tableView.dequeueReusableCell(withIdentifier: dailyIdentifier, for: indexPath) as! DailyTableViewCell
-            cell.configureUI(day: "오늘", icon: "star", low: -2, high: 9)
+            let dailyForecasts = viewModel.getDailyForecast()
+            let forecast = dailyForecasts[indexPath.row]
+            cell.configureUI(day: forecast.day, icon: forecast.icon, low: forecast.lowTemp, high: forecast.highTemp)
             return cell
         default:
             return UITableViewCell()

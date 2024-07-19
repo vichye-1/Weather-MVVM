@@ -15,6 +15,7 @@ struct ForecastResponse: Decodable {
 struct ForecastList: Decodable {
     let main: Main
     let weather: [Weather]
+    let dt_txt: String
 }
 
 struct Main: Decodable {

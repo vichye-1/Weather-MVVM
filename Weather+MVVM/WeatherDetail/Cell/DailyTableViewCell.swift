@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class DailyTableViewCell: BaseTableViewCell {
     private let dayLabel = {
@@ -19,7 +20,6 @@ class DailyTableViewCell: BaseTableViewCell {
     private let iconImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
-        view.backgroundColor = .orange
         return view
     }()
     private let lowTemperatureLabel = {
@@ -70,7 +70,8 @@ class DailyTableViewCell: BaseTableViewCell {
     // MARK: - other functions
     func configureUI(day: String, icon: String, low: Double, high: Double) {
         dayLabel.text = day
-        iconImageView.image = UIImage(named: icon)
+        let iconUrl = APIURL.icon(icon: icon)
+        iconImageView.kf.setImage(with: URL(string: iconUrl.urlString))
         lowTemperatureLabel.text = "최저 \(low)°"
         highTemperatureLabel.text = "최고 \(high)°"
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF1D4E3F2C490CC400DFDF98 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF1D4E3E2C490CC400DFDF98 /* IQKeyboardManagerSwift */; };
+		EF1D4E422C490CD000DFDF98 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF1D4E412C490CD000DFDF98 /* Kingfisher */; };
 		EFE5490C2C3EB5460033A6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490B2C3EB5460033A6A9 /* AppDelegate.swift */; };
 		EFE5490E2C3EB5460033A6A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490D2C3EB5460033A6A9 /* SceneDelegate.swift */; };
 		EFE549102C3EB5460033A6A9 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */; };
@@ -75,8 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF1D4E422C490CD000DFDF98 /* Kingfisher in Frameworks */,
 				EFE549332C3EBF5E0033A6A9 /* SnapKit in Frameworks */,
 				EFE549362C3EBF790033A6A9 /* Alamofire in Frameworks */,
+				EF1D4E3F2C490CC400DFDF98 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +253,8 @@
 			packageProductDependencies = (
 				EFE549322C3EBF5E0033A6A9 /* SnapKit */,
 				EFE549352C3EBF790033A6A9 /* Alamofire */,
+				EF1D4E3E2C490CC400DFDF98 /* IQKeyboardManagerSwift */,
+				EF1D4E412C490CD000DFDF98 /* Kingfisher */,
 			);
 			productName = "Weather+MVVM";
 			productReference = EFE549082C3EB5460033A6A9 /* Weather+MVVM.app */;
@@ -281,6 +287,8 @@
 			packageReferences = (
 				EFE549312C3EBF5E0033A6A9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				EFE549342C3EBF790033A6A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EF1D4E3D2C490CC300DFDF98 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				EF1D4E402C490CD000DFDF98 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = EFE549092C3EB5460033A6A9 /* Products */;
 			projectDirPath = "";
@@ -555,6 +563,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EF1D4E3D2C490CC300DFDF98 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
+		EF1D4E402C490CD000DFDF98 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 		EFE549312C3EBF5E0033A6A9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -574,6 +598,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EF1D4E3E2C490CC400DFDF98 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF1D4E3D2C490CC300DFDF98 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		EF1D4E412C490CD000DFDF98 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF1D4E402C490CD000DFDF98 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		EFE549322C3EBF5E0033A6A9 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EFE549312C3EBF5E0033A6A9 /* XCRemoteSwiftPackageReference "SnapKit" */;
