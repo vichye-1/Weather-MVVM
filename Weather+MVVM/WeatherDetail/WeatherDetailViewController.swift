@@ -30,16 +30,6 @@ class WeatherDetailViewController: BaseViewController {
         bottomButtonActions()
         bindForecast()
         viewModel.inputViewDidLoadTrigger.value = ()
-//        let currentAPI = APIURL.forecast(latitude: 35.133331, longitude: 128.699997, key: APIKey.openWeatherKey)
-//        NetworkManager.shared.fetchCurrentAPI(api: currentAPI) { success, fail in
-//            if fail != nil {
-//                print("current error!!!!!!!!")
-//            } else {
-//                print("current success")
-//            }
-//        }
-//        print("@@@@@@@@@@after current@@@@@@@@@@")
-//        
 //        let iconAPI = APIURL.icon(icon: "01d")
 //        NetworkManager.shared.fetchIconAPI(api: iconAPI) { success, fail in
 //            if fail != nil {

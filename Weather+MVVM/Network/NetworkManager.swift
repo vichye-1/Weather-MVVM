@@ -37,24 +37,7 @@ final class NetworkManager {
             }
         }
     }
-    
-    func fetchCurrentAPI(api: APIURL, completionHandler: @escaping currentCompletionHandler) {
-        print(#function)
-        guard let url = URL(string: api.urlString) else {
-            print("current url nil")
-            return
-        }
-        AF.request(url).validate(statusCode: 200..<500).responseString { response in
-            switch response.result {
-            case .success(let value):
-                //print(value)
-                print("++++++++current+++++++")
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
+
     func fetchIconAPI(api: APIURL, completionHandler: @escaping iconCompletionHandler) {
         print(#function)
         guard let url = URL(string: api.urlString) else {
