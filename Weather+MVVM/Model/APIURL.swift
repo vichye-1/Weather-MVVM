@@ -8,16 +8,16 @@
 import Foundation
 
 enum APIURL {
-    case forecast(cityId: Int, APIKey: String)
-    case current(latitude: Double, longitude: Double, APIKey: String)
+    case forecast(cityId: Int)
+    case current(latitude: Double, longitude: Double)
     case icon(icon: String)
     
     var urlString: String {
         switch self {
-        case .forecast(let cityId, let APIKey):
-            return "https://api.openweathermap.org/data/2.5/forecast?id=\(cityId)&appid=\(APIKey)"
-        case .current(latitude: let latitude, longitude: let longitude, APIKey: let APIKey):
-            return "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(APIKey)"
+        case .forecast(let cityId):
+            return "https://api.openweathermap.org/data/2.5/forecast?id=\(cityId)&appid=\(APIKey.openWeatherKey)"
+        case .current(latitude: let latitude, longitude: let longitude):
+            return "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(APIKey.openWeatherKey)"
         case .icon(let icon):
             return "https://openweathermap.org/img/wn/\(icon).png"
         }

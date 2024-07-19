@@ -18,7 +18,7 @@ final class NetworkManager {
     
     func fetchForecastAPI(cityId: Int, completionHandler: @escaping forecastCompletionHandler) {
         print(#function)
-        let api = APIURL.forecast(cityId: cityId, APIKey: APIKey.openWeatherKey)
+        let api = APIURL.forecast(cityId: cityId)
         guard let url = URL(string: api.urlString) else {
             print("url nil")
             return
