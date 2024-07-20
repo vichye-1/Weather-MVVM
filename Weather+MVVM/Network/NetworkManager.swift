@@ -13,8 +13,6 @@ final class NetworkManager {
     private init() { }
     
     typealias forecastCompletionHandler = (Result<ForecastResponse, Error>) -> Void
-    typealias currentCompletionHandler = (String, AFError?) -> Void
-    typealias iconCompletionHandler = (String, AFError?) -> Void
     
     func fetchForecastAPI(cityId: Int, completionHandler: @escaping forecastCompletionHandler) {
         print(#function)
@@ -31,7 +29,6 @@ final class NetworkManager {
             switch response.result {
             case .success(let value):
                 completionHandler(.success(value))
-                print(value)
             case .failure(let error):
                 print(error)
             }
