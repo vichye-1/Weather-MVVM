@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class HourlyCollectionViewCell: BaseCollectionViewCell {
+final class HourlyCollectionViewCell: BaseCollectionViewCell {
     private let timeLabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 14)
@@ -17,9 +17,16 @@ class HourlyCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
     
+    private let iconImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .systemYellow
+        return imageView
+    }()
+    
     // MARK: - configure fuctions
     override func configureHierarchy() {
-        [timeLabel].forEach { contentView.addSubview($0) }
+        [timeLabel, iconImageView].forEach { contentView.addSubview($0) }
     }
     
     override func configureLayout() {
@@ -27,6 +34,10 @@ class HourlyCollectionViewCell: BaseCollectionViewCell {
             make.top.equalToSuperview().offset(4)
             make.horizontalEdges.equalToSuperview().inset(8)
             make.height.equalTo(20)
+        }
+        iconImageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(40)
         }
     }
 }
