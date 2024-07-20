@@ -30,15 +30,6 @@ class WeatherDetailViewController: BaseViewController {
         bottomButtonActions()
         bindForecast()
         viewModel.inputViewDidLoadTrigger.value = ()
-//        let iconAPI = APIURL.icon(icon: "01d")
-//        NetworkManager.shared.fetchIconAPI(api: iconAPI) { success, fail in
-//            if fail != nil {
-//                print("icon Error")
-//            } else {
-//                print("icon success")
-//            }
-//        }
-//        print("@@@@@@@@@@after icon@@@@@@@@@@")
     }
     
     private func bindForecast() {

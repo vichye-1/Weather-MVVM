@@ -37,21 +37,4 @@ final class NetworkManager {
             }
         }
     }
-
-    func fetchIconAPI(api: APIURL, completionHandler: @escaping iconCompletionHandler) {
-        print(#function)
-        guard let url = URL(string: api.urlString) else {
-            print("icon url nil")
-            return
-        }
-        AF.request(url).validate(statusCode: 200..<500).responseString { response in
-            switch response.result {
-            case .success(let value):
-                //print(value)
-                print("#############icon###########")
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
 }
