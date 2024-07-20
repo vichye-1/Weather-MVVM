@@ -24,20 +24,33 @@ final class HourlyCollectionViewCell: BaseCollectionViewCell {
         return imageView
     }()
     
+    private let temperatureLabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.backgroundColor = .systemCyan
+        return label
+    }()
+    
     // MARK: - configure fuctions
     override func configureHierarchy() {
-        [timeLabel, iconImageView].forEach { contentView.addSubview($0) }
+        [timeLabel, iconImageView, temperatureLabel].forEach { contentView.addSubview($0) }
     }
     
     override func configureLayout() {
         timeLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(4)
-            make.horizontalEdges.equalToSuperview().inset(8)
+            make.top.equalToSuperview().offset(8)
+            make.horizontalEdges.equalToSuperview()
             make.height.equalTo(20)
         }
         iconImageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(40)
+        }
+        temperatureLabel.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(8)
+            make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(20)
         }
     }
 }
