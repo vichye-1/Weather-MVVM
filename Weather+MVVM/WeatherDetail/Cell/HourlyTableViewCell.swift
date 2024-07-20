@@ -15,7 +15,6 @@ final class HourlyTableViewCell: BaseTableViewCell {
         layout.minimumInteritemSpacing = 10
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = .yellow
         return collectionView
     }()
     
