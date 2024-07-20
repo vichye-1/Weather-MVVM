@@ -73,7 +73,11 @@ final class ForecastViewModel {
                 }
             }
         }
-        return Array(dailyForecasts.values.prefix(5))
+        //print(dailyForecasts)
+        let sortedForecasts = dailyForecasts.sorted { $0.key < $1.key }
+        print("===================")
+        print(sortedForecasts)
+        return Array(sortedForecasts.map { $0.value })
     }
     
     private func getDayOfWeek(date: Date) -> String {
