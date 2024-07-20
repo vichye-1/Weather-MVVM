@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EF1D4E3F2C490CC400DFDF98 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF1D4E3E2C490CC400DFDF98 /* IQKeyboardManagerSwift */; };
 		EF1D4E422C490CD000DFDF98 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF1D4E412C490CD000DFDF98 /* Kingfisher */; };
+		EF1D4E442C4BF9FC00DFDF98 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D4E432C4BF9FC00DFDF98 /* HourlyCollectionViewCell.swift */; };
 		EFE5490C2C3EB5460033A6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490B2C3EB5460033A6A9 /* AppDelegate.swift */; };
 		EFE5490E2C3EB5460033A6A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490D2C3EB5460033A6A9 /* SceneDelegate.swift */; };
 		EFE549102C3EB5460033A6A9 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF1D4E432C4BF9FC00DFDF98 /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFE549082C3EB5460033A6A9 /* Weather+MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather+MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE5490B2C3EB5460033A6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFE5490D2C3EB5460033A6A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				EFE549722C4554980033A6A9 /* MainWeatherCell.swift */,
 				EFE549542C416EED0033A6A9 /* HourlyTableViewCell.swift */,
+				EF1D4E432C4BF9FC00DFDF98 /* HourlyCollectionViewCell.swift */,
 				EFE549562C416F000033A6A9 /* DailyTableViewCell.swift */,
 			);
 			path = Cell;
@@ -336,6 +339,7 @@
 				EFE549102C3EB5460033A6A9 /* WeatherDetailViewController.swift in Sources */,
 				EFE5496B2C4497FC0033A6A9 /* LoadCity.swift in Sources */,
 				EFE5490C2C3EB5460033A6A9 /* AppDelegate.swift in Sources */,
+				EF1D4E442C4BF9FC00DFDF98 /* HourlyCollectionViewCell.swift in Sources */,
 				EFE549242C3EB6420033A6A9 /* APIKey.swift in Sources */,
 				EFE5494F2C400B560033A6A9 /* UIView+.swift in Sources */,
 				EFE549292C3EBB460033A6A9 /* BaseTableViewCell.swift in Sources */,
