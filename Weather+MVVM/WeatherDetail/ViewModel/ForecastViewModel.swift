@@ -73,10 +73,7 @@ final class ForecastViewModel {
                 }
             }
         }
-        //print(dailyForecasts)
         let sortedForecasts = dailyForecasts.sorted { $0.key < $1.key }
-        print("===================")
-        print(sortedForecasts)
         return Array(sortedForecasts.map { $0.value })
     }
     
