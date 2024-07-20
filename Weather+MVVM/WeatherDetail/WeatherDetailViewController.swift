@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class WeatherDetailViewController: BaseViewController {
+final class WeatherDetailViewController: BaseViewController {
     
     private let viewModel = ForecastViewModel()
     

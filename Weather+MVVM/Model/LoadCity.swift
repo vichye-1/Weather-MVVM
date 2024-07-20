@@ -20,7 +20,7 @@ struct Coordinate: Codable {
     let lat: Double
 }
 
-class CityLoader {
+final class CityLoader {
     static func loadCities() -> [CityInfo] {
         let fileName: String = "CityList"
         let extensionType = "json"
@@ -29,7 +29,6 @@ class CityLoader {
             print("fail to load cityList")
             return []
         }
-        
         do {
             let cities = try JSONDecoder().decode([CityInfo].self, from: data)
             return cities

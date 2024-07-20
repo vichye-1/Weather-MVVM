@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class BottomButtonsView: UIView {
+final class BottomButtonsView: UIView {
     let mapButton = {
         let button = UIButton()
         let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 20, weight: .light)

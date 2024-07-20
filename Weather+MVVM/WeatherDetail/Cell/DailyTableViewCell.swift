@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class DailyTableViewCell: BaseTableViewCell {
+final class DailyTableViewCell: BaseTableViewCell {
     private let dayLabel = {
         let label = UILabel()
         label.textColor = .black

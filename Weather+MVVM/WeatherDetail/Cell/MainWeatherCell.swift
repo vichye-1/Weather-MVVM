@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainWeatherCell: BaseTableViewCell {
+final class MainWeatherCell: BaseTableViewCell {
     private let cityLabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 44)

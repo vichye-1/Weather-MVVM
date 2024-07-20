@@ -8,6 +8,6 @@
 import UIKit
 import SnapKit
 
-class HourlyTableViewCell: BaseTableViewCell {
+final class HourlyTableViewCell: BaseTableViewCell {
     
 }

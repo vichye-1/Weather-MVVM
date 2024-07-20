@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CityTableViewCell: BaseTableViewCell {
+final class CityTableViewCell: BaseTableViewCell {
     private let hashtagLabel = {
         let label = UILabel()
         label.textColor = .black
