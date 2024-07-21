@@ -18,6 +18,12 @@ final class HourlyTableViewCell: BaseTableViewCell {
         return collectionView
     }()
     
+    var hourlyForecasts: [HourlyForecast] = [] {
+        didSet {
+            hourlyCollectionView.reloadData()
+        }
+    }
+    
     // MARK: - configure functions
     override func configureHierarchy() {
         contentView.addSubview(hourlyCollectionView)
@@ -45,7 +51,7 @@ final class HourlyTableViewCell: BaseTableViewCell {
 
 extension HourlyTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return hourlyForecasts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -59,6 +65,8 @@ extension HourlyTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = HourlyCollectionViewCell.identifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HourlyCollectionViewCell
+        let hourlyResult = hourlyForecasts[indexPath.item]
+        cell.setUpText(time: hourlyResult.hour, icon: hourlyResult.icon, temp: hourlyResult.temp.convertTemperature().temperatureFormat())
         return cell
     }
     

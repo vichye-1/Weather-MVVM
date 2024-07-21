@@ -123,6 +123,7 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         case 1:
             let hourlyIdentifier = HourlyTableViewCell.identifier
             let cell = tableView.dequeueReusableCell(withIdentifier: hourlyIdentifier, for: indexPath) as! HourlyTableViewCell
+            cell.hourlyForecasts = viewModel.getHourlyForecast()
             return cell
         case 2:
             let dailyIdentifier = DailyTableViewCell.identifier

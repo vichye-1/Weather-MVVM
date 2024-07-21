@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 import SnapKit
 
 final class HourlyCollectionViewCell: BaseCollectionViewCell {
@@ -13,14 +14,12 @@ final class HourlyCollectionViewCell: BaseCollectionViewCell {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 14)
         label.textAlignment = .center
-        label.backgroundColor = .brown
         return label
     }()
     
     private let iconImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .systemYellow
         return imageView
     }()
     
@@ -28,7 +27,6 @@ final class HourlyCollectionViewCell: BaseCollectionViewCell {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 16)
         label.textAlignment = .center
-        label.backgroundColor = .systemCyan
         return label
     }()
     
@@ -52,6 +50,14 @@ final class HourlyCollectionViewCell: BaseCollectionViewCell {
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(20)
         }
+    }
+    
+    // MARK: - private functions
+    func setUpText(time: String, icon: String, temp: String) {
+        timeLabel.text = "\(time)시"
+        let iconUrl = APIURL.icon(icon: icon)
+        iconImageView.kf.setImage(with: URL(string: iconUrl.urlString))
+        temperatureLabel.text = temp
     }
 }
 

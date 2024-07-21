@@ -14,6 +14,12 @@ struct DailyForecast {
     var highTemp: Double
 }
 
+struct HourlyForecast {
+    let hour: String
+    let icon: String
+    var temp: Double
+}
+
 final class ForecastViewModel {
     private let networkManager = NetworkManager.shared
     
@@ -45,6 +51,27 @@ final class ForecastViewModel {
                 print(error)
             }
         }
+    }
+
+    func getHourlyForecast() -> [HourlyForecast] {
+        guard let forecast = outputForecast.value else { return [] }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        var hourlyForecasts: [HourlyForecast] = []
+        
+        for item in forecast.list {
+            guard let date = dateFormatter.date(from: item.dt_txt) else { continue }
+            
+            let hourFormatter = DateFormatter()
+            hourFormatter.dateFormat = "HH"
+            let hour = hourFormatter.string(from: date)
+            
+            let hourlyForecast = HourlyForecast(hour: hour, icon: item.weather.first?.icon ?? "", temp: item.main.temp)
+            hourlyForecasts.append(hourlyForecast)
+        }
+        return hourlyForecasts
     }
     
     func getDailyForecast() -> [DailyForecast] {
