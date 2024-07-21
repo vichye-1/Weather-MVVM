@@ -13,6 +13,6 @@ extension Double {
     }
     
     func temperatureFormat() -> String {
-        return String(format: "%.1f°", self)
+        return String(format: "%.0f°", self)
     }
 }
