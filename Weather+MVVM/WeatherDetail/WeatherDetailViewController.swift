@@ -84,6 +84,7 @@ final class WeatherDetailViewController: BaseViewController {
     }
     @objc private func listButtonTapped() {
         let searchCityVC = SearchCityViewController()
+        searchCityVC.delegate = self
         self.navigationController?.pushViewController(searchCityVC, animated: true)
     }
 }
@@ -154,5 +155,11 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
         case 2: return "5일 간의 일기예보"
         default: return nil
         }
+    }
+}
+
+extension WeatherDetailViewController: CitySelectionDelegate {
+    func selectCity(id: Int) {
+        viewModel.inputCitySelected.value = id
     }
 }

@@ -24,7 +24,7 @@ final class ForecastViewModel {
     private let networkManager = NetworkManager.shared
     
     var inputViewDidLoadTrigger = Observable(())
-    var inputCityIdSelected: Observable<Int?> = Observable(nil)
+    var inputCitySelected: Observable<Int?> = Observable(nil)
     
     var outputForecast: Observable<ForecastResponse?> = Observable(nil)
     
@@ -34,8 +34,7 @@ final class ForecastViewModel {
         inputViewDidLoadTrigger.bind { [weak self] _ in
             self?.fetchForecast(cityId: 1835847)
         }
-        
-        inputCityIdSelected.bind { [weak self] cityId in
+        inputCitySelected.bind { [weak self] cityId in
             guard let cityId = cityId else { return }
             self?.fetchForecast(cityId: cityId)
         }

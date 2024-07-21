@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol CitySelectionDelegate: AnyObject {
+    func selectCity(id: Int)
+}
+
 final class SearchCityViewController: BaseViewController {
         
     private var cities: [CityInfo] = []
     private var filteredCities: [CityInfo] = []
+    
+    weak var delegate: CitySelectionDelegate?
     
     private let citySearchBar = {
         let citysearchBar = UISearchBar()
@@ -74,5 +80,11 @@ extension SearchCityViewController: UITableViewDelegate, UITableViewDataSource {
         let city = filteredCities[indexPath.row]
         cell.configureLabels(city: city)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCity = filteredCities[indexPath.row]
+        delegate?.selectCity(id: selectedCity.id)
+        navigationController?.popViewController(animated: true)
     }
 }
