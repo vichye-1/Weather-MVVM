@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+enum Section: CaseIterable {
+    case mainWeather
+    case hourlyWeather
+    case dailyWeather
+}
+
 final class WeatherDetailViewController: BaseViewController {
     
     private let viewModel = ForecastViewModel()
@@ -92,7 +98,7 @@ final class WeatherDetailViewController: BaseViewController {
 // MARK: - UITableView
 extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return Section.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
