@@ -39,6 +39,7 @@
 		EFE5496B2C4497FC0033A6A9 /* LoadCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5496A2C4497FC0033A6A9 /* LoadCity.swift */; };
 		EFE549732C4554980033A6A9 /* MainWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE549722C4554980033A6A9 /* MainWeatherCell.swift */; };
 		EFE549802C46B2B50033A6A9 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5497F2C46B2B50033A6A9 /* Double+.swift */; };
+		EFF773252C5D3A8400CD2100 /* WeatherSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF773242C5D3A8400CD2100 /* WeatherSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		EFE5496A2C4497FC0033A6A9 /* LoadCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCity.swift; sourceTree = "<group>"; };
 		EFE549722C4554980033A6A9 /* MainWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherCell.swift; sourceTree = "<group>"; };
 		EFE5497F2C46B2B50033A6A9 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		EFF773242C5D3A8400CD2100 /* WeatherSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		EFE549392C3EC1B50033A6A9 /* WeatherDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EFF773232C5D3A6900CD2100 /* Util */,
 				EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */,
 				EFE5495A2C43F5220033A6A9 /* ViewModel */,
 				EFE549532C416ED80033A6A9 /* Cell */,
@@ -235,6 +238,14 @@
 				EFE549682C448CCB0033A6A9 /* CityTableViewCell.swift */,
 			);
 			path = SearchCity;
+			sourceTree = "<group>";
+		};
+		EFF773232C5D3A6900CD2100 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EFF773242C5D3A8400CD2100 /* WeatherSection.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +348,7 @@
 				EFE5492B2C3EBB5A0033A6A9 /* BaseCollectionViewCell.swift in Sources */,
 				EFE549522C400B930033A6A9 /* ReuseIdentifierProtocol.swift in Sources */,
 				EFE549102C3EB5460033A6A9 /* WeatherDetailViewController.swift in Sources */,
+				EFF773252C5D3A8400CD2100 /* WeatherSection.swift in Sources */,
 				EFE5496B2C4497FC0033A6A9 /* LoadCity.swift in Sources */,
 				EFE5490C2C3EB5460033A6A9 /* AppDelegate.swift in Sources */,
 				EF1D4E442C4BF9FC00DFDF98 /* HourlyCollectionViewCell.swift in Sources */,

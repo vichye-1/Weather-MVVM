@@ -8,12 +8,6 @@
 import UIKit
 import SnapKit
 
-enum Section: CaseIterable {
-    case mainWeather
-    case hourlyWeather
-    case dailyWeather
-}
-
 final class WeatherDetailViewController: BaseViewController {
     
     private let viewModel = ForecastViewModel()
