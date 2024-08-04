@@ -92,7 +92,7 @@ final class WeatherDetailViewController: BaseViewController {
 // MARK: - UITableView
 extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Section.allCases.count
+        return TableViewSection.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,25 +141,46 @@ extension WeatherDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0: return 200
-        case 1: return 120
-        case 2: return 50
-        default: return 0
-        }
+        return TableViewSection.allCases[indexPath.section].rowHeight
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 1: return "3시간 간격의 일기예보"
-        case 2: return "5일 간의 일기예보"
-        default: return nil
-        }
+        return TableViewSection.allCases[section].headerTitle
     }
 }
 
 extension WeatherDetailViewController: CitySelectionDelegate {
     func selectCity(id: Int) {
         viewModel.inputCitySelected.value = id
+    }
+}
+
+extension WeatherDetailViewController {
+    enum TableViewSection: CaseIterable {
+        case mainWeather
+        case hourlyWeather
+        case dailyWeather
+        
+        var rowHeight: CGFloat {
+            switch self {
+            case .mainWeather:
+                return 200
+            case .hourlyWeather:
+                return 120
+            case .dailyWeather:
+                return 50
+            }
+        }
+        
+        var headerTitle: String? {
+            switch self {
+            case .mainWeather:
+                return nil
+            case .hourlyWeather:
+                return "3시간 간격의 일기예보"
+            case .dailyWeather:
+                return "5일 간의 일기예보"
+            }
+        }
     }
 }
