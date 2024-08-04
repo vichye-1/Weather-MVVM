@@ -10,6 +10,7 @@
 		EF1D4E3F2C490CC400DFDF98 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF1D4E3E2C490CC400DFDF98 /* IQKeyboardManagerSwift */; };
 		EF1D4E422C490CD000DFDF98 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EF1D4E412C490CD000DFDF98 /* Kingfisher */; };
 		EF1D4E442C4BF9FC00DFDF98 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D4E432C4BF9FC00DFDF98 /* HourlyCollectionViewCell.swift */; };
+		EFCB8C3E2C5FC766004E4C95 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = EFCB8C3D2C5FC766004E4C95 /* Toast */; };
 		EFE5490C2C3EB5460033A6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490B2C3EB5460033A6A9 /* AppDelegate.swift */; };
 		EFE5490E2C3EB5460033A6A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490D2C3EB5460033A6A9 /* SceneDelegate.swift */; };
 		EFE549102C3EB5460033A6A9 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5490F2C3EB5460033A6A9 /* WeatherDetailViewController.swift */; };
@@ -84,6 +85,7 @@
 				EF1D4E422C490CD000DFDF98 /* Kingfisher in Frameworks */,
 				EFE549332C3EBF5E0033A6A9 /* SnapKit in Frameworks */,
 				EFE549362C3EBF790033A6A9 /* Alamofire in Frameworks */,
+				EFCB8C3E2C5FC766004E4C95 /* Toast in Frameworks */,
 				EF1D4E3F2C490CC400DFDF98 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +271,7 @@
 				EFE549352C3EBF790033A6A9 /* Alamofire */,
 				EF1D4E3E2C490CC400DFDF98 /* IQKeyboardManagerSwift */,
 				EF1D4E412C490CD000DFDF98 /* Kingfisher */,
+				EFCB8C3D2C5FC766004E4C95 /* Toast */,
 			);
 			productName = "Weather+MVVM";
 			productReference = EFE549082C3EB5460033A6A9 /* Weather+MVVM.app */;
@@ -303,6 +306,7 @@
 				EFE549342C3EBF790033A6A9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				EF1D4E3D2C490CC300DFDF98 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				EF1D4E402C490CD000DFDF98 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EFCB8C3C2C5FC766004E4C95 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = EFE549092C3EB5460033A6A9 /* Products */;
 			projectDirPath = "";
@@ -595,6 +599,14 @@
 				minimumVersion = 7.12.0;
 			};
 		};
+		EFCB8C3C2C5FC766004E4C95 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		EFE549312C3EBF5E0033A6A9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -623,6 +635,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF1D4E402C490CD000DFDF98 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		EFCB8C3D2C5FC766004E4C95 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCB8C3C2C5FC766004E4C95 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		EFE549322C3EBF5E0033A6A9 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

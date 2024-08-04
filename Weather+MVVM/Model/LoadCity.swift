@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Toast
 
-struct CityInfo: Codable {
+struct CityInfo: Decodable {
     let id: Int
     let name: String
     let state : String?
@@ -15,7 +16,7 @@ struct CityInfo: Codable {
     let coord: Coordinate
 }
 
-struct Coordinate: Codable {
+struct Coordinate: Decodable {
     let lon: Double
     let lat: Double
 }
